@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Calculator Styling */
+.calculator {
+    width: 375px;
+    
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+
+/* Display Styling */
+.display {
+    background: #ffffff;
+    color: rgb(255, 255, 255);
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 130px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+}
+
+.display input {
+    width: 90%;
+    padding: 10px;
+    height: 100px;
+    outline: none;
+    border: none;
+    background: none;
+    color: rgb(26, 25, 25);
+    font-size: 2rem;
+    text-align: right;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.buttons {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 16px;
+    background: #faf9f9;
+    justify-items: center;
+    
+}
+
+.btn {
+    background: #ffffff;
+    border: none;
+    font-size: 1.5rem;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #f17af5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.operator {
+    background: #ffba08;
+    
+}
+
+.operator:hover {
+    background: #ff9500;
+    color: white;
+}
+
+.clear {
+    background: #ff4d4d;
+    color: white;
+}
+
+.clear:hover {
+    background: #e60000;
+}
+
+.equal {
+    background: #00cc66;
+    color: white;
+}
+
+.equal:hover {
+    background: #00994d;
+}
