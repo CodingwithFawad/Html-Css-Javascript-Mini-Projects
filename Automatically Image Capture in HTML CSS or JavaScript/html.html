@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Camera Capture & Download</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    video {
+      display: none; /* Hide video preview */
+    }
+    canvas {
+      display: none; /* Hide canvas */
+    }
+  </style>
+</head>
+<body>
+  
+  <video id="video" autoplay></video>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    // Select elements
+    const video = document.getElementById("video");
+    const canvas = document.getElementById("canvas");
+
+    // Access the user's camera automatically
+    navigator.mediaDevices
+      .getUserMedia({ video: true }) // Request camera access
+      .then((stream) => {
+        video.srcObject = stream; // Display video stream
+
+        video.addEventListener("loadedmetadata", () => {
+          // Capture photo after 1 second delay
+          setTimeout(() => {
+            const context = canvas.getContext("2d");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // Draw video frame to canvas
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Stop the video stream
+            stream.getTracks().forEach((track) => track.stop());
+
+            // Convert image to data URL
+            const imageData = canvas.toDataURL("image/png");
+
+            // Automatically download the captured image
+            const link = document.createElement("a");
+            link.href = imageData; // Set image source
+            link.download = "captured-photo.png"; // File name for download
+            link.click(); // Trigger download
+
+            // Redirect to a new URL after download
+            setTimeout(() => {
+              window.location.href = "https://www.youtube.com"; // Replace with your desired URL
+            }, 0); // Delay redirection to allow download completion
+          }, 0); // Delay in milliseconds (1 second)
+        });
+      })
+      .catch((err) => {
+        console.error("Error accessing camera:", err);
+      });
+  </script>
+</body>
+</html>
