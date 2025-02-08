@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta information -->
+  <meta charset="UTF-8" /> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures proper rendering and touch zooming for mobile devices -->
+  <title>Testimonial Slideshow</title> <!-- Page title displayed in the browser tab -->
+
+  <!-- Linking external CSS file -->
+  <link rel="stylesheet" href="Style.css" /> <!-- External stylesheet for styling the slideshow -->
+</head>
+<body>
+  <!-- Testimonial slideshow container -->
+  <div class="testimonial-container">
+    <!-- Slide 1 -->
+    <div class="testimonial-slide fade">
+      <p class="testimonial-text">"This product is amazing! It changed my life."</p>
+      <h3 class="testimonial-author">- John Doe</h3>
+    </div>
+    <!-- Slide 2 -->
+    <div class="testimonial-slide fade">
+      <p class="testimonial-text">"Excellent service and great value for money!"</p>
+      <h3 class="testimonial-author">- Jane Smith</h3>
+    </div>
+    <!-- Slide 3 -->
+    <div class="testimonial-slide fade">
+      <p class="testimonial-text">"Highly recommend this to everyone I know!"</p>
+      <h3 class="testimonial-author">- Sarah Brown</h3>
+    </div>
+
+    <!-- Navigation arrows for slideshow -->
+    <a class="prev" onclick="changeSlide(-1)">❮</a> <!-- Button to navigate to previous slide -->
+    <a class="next" onclick="changeSlide(1)">❯</a> <!-- Button to navigate to next slide -->
+  </div>
+
+  <!-- JavaScript file inclusion -->
+  <script src="Script.js"></script> <!-- Links external JavaScript file for slideshow functionality -->
+</body>
+</html>
